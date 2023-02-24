@@ -19,7 +19,7 @@ def write_to_azure_blob(sas_token, container_name, blob_name, file_path):
   blob_client = container_client.get_blob_client(blob_name)
 
   with open(file_path, "rb") as data:
-    blob_client.upload_blob(data)
+    blob_client.upload_blob(data, overwrite=True)
 
 
 def main():
